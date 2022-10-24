@@ -1,0 +1,131 @@
+315816686-318765351
+minimaxPlayerTest: : player1 vs. player2
+MinimaxPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+minimaxPlayerTest: : player1 vs. player2
+MinimaxPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+RandomPlayer VS MinimaxPlayer
+    Player 2 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+RandomPlayer VS MinimaxPlayer
+    Player 2 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+RandomPlayer VS AlphabetaPlayer
+    Player 2 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+RandomPlayer VS AlphabetaPlayer
+    Player 2 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+RandomPlayer VS AlphabetaPlayer
+    Player 2 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+MinimaxPlayer VS SimplePlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+SimplePlayer VS MinimaxPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS SimplePlayer
+    Player 2 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+SimplePlayer VS AlphabetaPlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+MinimaxPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+MinimaxPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS RandomPlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+RandomPlayer VS MinimaxPlayer
+    Player 2 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+RandomPlayer VS MinimaxPlayer
+    Player 2 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+RandomPlayer VS AlphabetaPlayer
+    Player 2 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+RandomPlayer VS AlphabetaPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+RandomPlayer VS AlphabetaPlayer
+    Player 2 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+MinimaxPlayer VS SimplePlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+SimplePlayer VS MinimaxPlayer
+Time Up For Player 2
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS SimplePlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+SimplePlayer VS AlphabetaPlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+SimplePlayer VS AlphabetaPlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+SimplePlayer VS MinimaxPlayer
+    Player 1 Won!
+ 
+MinimaxPlayerTest: : player1 vs. player2
+MinimaxPlayer VS SimplePlayer
+    Player 1 Won!
+ 
+AlphabetaPlayerTest: : player1 vs. player2
+AlphabetaPlayer VS SimplePlayer
+Time Up For Player 1
+    Player 2 Won!
+ 
