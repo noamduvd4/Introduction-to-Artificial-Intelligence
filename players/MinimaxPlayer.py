@@ -72,12 +72,15 @@ class Player(AbstractPlayer):
         """
         if (time_limit > 0.1):
             end_time = time.time() + time_limit - 0.1
+
         else:
             end_time = time.time() + time_limit
+        
         old_state = [self.board, 1, -1]
         new_state = [self.board, 1, -1]
         current_deph = 1
         end_game = False
+        
         while (not end_game):
             try:
                 _, state , end_game = self.algo_to_search.search(old_state, current_deph, True, self.turn, end_time)

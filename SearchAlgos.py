@@ -61,10 +61,12 @@ class MiniMax(SearchAlgos):
                     current_max = new_value
                     board_max = c
                     end_game = is_endgame
+
                 elif current_max < new_value:
                     current_max = new_value
                     board_max = c
                     end_game = is_endgame
+
             return current_max , board_max , end_game
 
         else:
@@ -113,10 +115,12 @@ class AlphaBeta(SearchAlgos):
                     current_max = new_value
                     board_max = c
                     end_game = is_endgame
+
                 elif current_max < new_value:
                     current_max = new_value
                     board_max = c
                     end_game = is_endgame
+                    
                 alpha = max(alpha, current_max)
                 if(current_max >= beta):
                     return np.inf , c , is_endgame

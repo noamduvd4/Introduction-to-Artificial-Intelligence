@@ -23,7 +23,9 @@ class AbstractPlayer:
         self.board = np.array(24)
         self.directions = utils.get_directions
         self.turn = None
+        #an array with the all players troops location 
         self.my_pos = None
+        #an array with the all enemys troops location 
         self.rival_pos = None
 
     def set_game_params(self, board):
@@ -128,7 +130,10 @@ class AbstractPlayer:
             return self.check_next_mill(position, p, board)
         else:
             return False
-
+    """
+    return the next moves from the current position
+    :param board m naximinizig_playrt: who is the player , turn : the number of turn
+    """
     def succ(self, board, maximizing_player, turn):
         player_number = 1
         rival_number = 2
@@ -136,41 +141,58 @@ class AbstractPlayer:
             player_number = 2
             rival_number = 1
 
+        #if we in the late stage of the game
         if turn >= 18:
             return self._succ_stage_2(board, player_number, rival_number)
+        #if we in the early stage of the game
         else:
             return self._succ_stage_1(board, player_number, rival_number)
 
+    """
+    return the next possible moves for the first stage of the game
+    """
     def _succ_stage_1(self, board, player_number, rival_number):
         board_list = []
+        #moves on all possible location
         for pos in range(len(board)):
             if board[pos] != 0:
                 continue
             board_dup = deepcopy(board)
+            #place the player in the current postion
             board_dup[pos] = player_number
+            #if the placemant created a mill
             if self.is_mill(pos, board_dup):
+                #remove all possible enamy players
                 for rival_pos in range(len(board_dup)):
                     if int(board_dup[rival_pos]) == rival_number:
                         board_dup_dup = deepcopy(board_dup)
                         board_dup_dup[rival_pos] = 0
                         board_list.append([board_dup_dup, pos, rival_pos])
             else:
-                board_dup[pos] = player_number
                 board_list.append([board_dup, pos, -1])
+        #return the list of possilbe moves
         return board_list
 
+    
+    """
+    return the next possible moves for the second stage of the game
+    """    
     def _succ_stage_2(self, board, player_number, rival_number):
         board_list = []
+        #find all players troops location
         for old_pos in range(len(board)):
             if int(board[old_pos]) != player_number:
                 continue
+            #find all possible moves of the troop
             directions = utils.get_directions(old_pos)
             for move_pos in directions:
                 if board[move_pos] != 0:
                     continue
+
                 board_dup = deepcopy(board)
                 board_dup[move_pos] = player_number
                 board_dup[old_pos] = 0
+
                 if self.is_mill(move_pos, board_dup):
                     for rival_pos in range(len(board_dup)):
                         if int(board_dup[rival_pos]) == rival_number:
@@ -179,6 +201,7 @@ class AbstractPlayer:
                             board_list.append([board_dup_dup, move_pos, rival_pos])
                 else:
                     board_list.append([board_dup, move_pos, -1])
+
         return board_list
 
     def _get_positions(self, board, player_num):
@@ -202,14 +225,20 @@ class AbstractPlayer:
     def _compere_move_to_board(self, state):
         """
         get state from the minmax algo and turn it to a valid move
+        parameters: state[0] the board  after movements,
+                    state[1] the location of the move solider ,
+                    state[2] if the location of the dead rivel solider, if exists
         """
         new_board = state[0]
         new_pos = state[1]
         rival_cell = state[2]
         soldier_that_moved = 0
+
+        #locate a new solider
         if self.turn < 18:
             soldier_that_moved = int(np.where(self.my_pos == -1)[0][0])
             self.my_pos[soldier_that_moved] = new_pos
+        
         else:
             for index in range(len(self.my_pos)):
                 if int(self.my_pos[index]) >= 0 and int(new_board[self.my_pos[index]]) != 1:
@@ -217,11 +246,14 @@ class AbstractPlayer:
                     self.my_pos[index] = new_pos
                     soldier_that_moved = index
                     break
+
         self.board[new_pos] = 1
+
         if int(rival_cell) != -1:
             rival_idx = np.where(self.rival_pos == int(rival_cell))[0][0]
             self.rival_pos[rival_idx] = -2
             self.board[rival_cell] = 0
+            
         return new_pos, soldier_that_moved, rival_cell
 
     def _closed_mill(self, state) -> int:
